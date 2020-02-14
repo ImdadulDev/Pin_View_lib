@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 import com.goodiebag.pinview.Pinview
+import com.poovam.pinedittextfield.PinField
 
 class MainActivity : AppCompatActivity() {
     private var otpTextView: OtpTextView? = null
@@ -57,11 +58,25 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onOTPComplete(otp: String) {
-                Toast.makeText(applicationContext, otp , Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, otp, Toast.LENGTH_SHORT).show()
             }
         }
         //errorButton.setOnClickListener { otpTextView?.showError() }
         //successButton.setOnClickListener { otpTextView?.showSuccess() }
+
+        val circleField = findViewById<PinField>(R.id.circleField)
+        val squareField = findViewById<PinField>(R.id.squareField)
+        val listener = object : PinField.OnTextCompleteListener{
+            override fun onTextComplete(enteredText: String): Boolean {
+                Toast.makeText(this@MainActivity,enteredText, Toast.LENGTH_SHORT).show()
+                return@onTextComplete true
+            }
+
+        }
+        circleField.onTextCompleteListener = listener
+        squareField.onTextCompleteListener = listener
+
+        squareField.setText("1")
 
     }
 }

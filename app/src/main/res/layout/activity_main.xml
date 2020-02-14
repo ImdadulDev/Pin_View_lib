@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e1e1e1"
+    android:gravity="top|center"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -14,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Number"/>
+        android:text="Number" />
 
     <com.goodiebag.pinview.Pinview
         android:id="@+id/pinview1"
@@ -22,13 +23,13 @@
         android:layout_height="wrap_content"
         app:cursorVisible="true"
         app:forceKeyboard="true"
-        app:hint=""
+        app:hint="1"
         app:inputType="number"
         app:password="true"
         app:pinBackground="@drawable/example_drawable_with_grey_disabled"
         app:pinHeight="40dp"
         app:pinLength="4"
-        app:pinWidth="40dp"/>
+        app:pinWidth="40dp" />
 
     <!--<TextView
         android:layout_width="match_parent"
@@ -86,7 +87,6 @@
         app:pinWidth="40dp"/>-->
 
 
-
     <in.aabhasjindal.otptextview.OtpTextView
         android:id="@+id/otp_view"
         android:layout_width="wrap_content"
@@ -100,17 +100,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:length="6"
-        app:otp=""
+        app:otp_box_background="@color/black"
         app:otp_text_size="20dp"
-        app:width="40dp"
-        app:otp_box_background="@color/black" />
-
+        app:width="40dp" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Custom Pin View"/>
+        android:text="Custom Pin View" />
 
     <com.goodiebag.pinview.Pinview
         android:id="@+id/pinview5"
@@ -120,6 +118,31 @@
         app:password="true"
         app:pinHeight="40dp"
         app:pinLength="4"
-        app:pinWidth="40dp"/>
+        app:pinWidth="40dp" />
+
+    <com.poovam.pinedittextfield.SquarePinField
+        android:id="@+id/squareField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:textSelectHandle="@drawable/text_handle"
+        android:textSize="16sp"
+        app:cornerRadius="10dp"
+        app:fieldBgColor="#ddd"
+        app:noOfFields="4" />
+
+    <com.poovam.pinedittextfield.CirclePinField
+        android:id="@+id/circleField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textSelectHandle="@drawable/text_handle"
+        android:textSize="16sp"
+        app:circleRadius="15dp"
+        app:fieldBgColor="#ddd"
+        app:fillerColor="@color/colorPrimary"
+        app:fillerRadius="2dp"
+        app:noOfFields="4" />
 
 </LinearLayout>
